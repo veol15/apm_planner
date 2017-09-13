@@ -57,6 +57,12 @@ namespace core {
                     types.append(MapType::GoogleSatelliteKorea);
                     types.append(MapType::GoogleLabelsKorea);
                 }
+				 break;
+	        case MapType::GaoDeHybrid:
+	            {
+					types.append(MapType::GaoDeSatellite);
+	            	types.append(MapType::GaoDeLabels);
+				}
                 break;
 
             case MapType::YahooHybrid:

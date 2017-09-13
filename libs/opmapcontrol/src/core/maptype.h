@@ -97,35 +97,43 @@ namespace core {
             GoogleLabelsKorea=4003,
             GoogleHybridKorea=4005,
 
-            YandexMapRu = 5000,
-            Statkart_Topo2 = 5500
-        };
-        static QString StrByType(Types const& value)
-        {
-            QMetaObject metaObject = MapType().staticMetaObject;
-            QMetaEnum metaEnum= metaObject.enumerator( metaObject.indexOfEnumerator("Types"));
-            QString s=metaEnum.valueToKey(value);
-            return s;
-        }
-        static Types TypeByStr(QString const& value)
-        {
-            QMetaObject metaObject = MapType().staticMetaObject;
-            QMetaEnum metaEnum= metaObject.enumerator( metaObject.indexOfEnumerator("Types"));
-            Types s=(Types)metaEnum.keyToValue(value.toLatin1());
-            return s;
-        }
-        static QStringList TypesList()
-        {
-            QStringList ret;
-            QMetaObject metaObject = MapType().staticMetaObject;
-            QMetaEnum metaEnum= metaObject.enumerator( metaObject.indexOfEnumerator("Types"));
-            for(int x=0;x<metaEnum.keyCount();++x)
-            {
-                ret.append(metaEnum.key(x));
-            }
-            return ret;
-        }
+	        YandexMapRu = 5000,
+	        Statkart_Topo2 = 5500,
+
+	        GaoDeMap = 6000,
+	        GaoDeLabels = 6001,
+	        GaoDeSatellite = 6002,
+	        GaoDeHybrid = 6003
     };
+
+    static QString StrByType(Types const& value)
+    {
+        QMetaObject metaObject = MapType().staticMetaObject;
+        QMetaEnum metaEnum= metaObject.enumerator( metaObject.indexOfEnumerator("Types"));
+        QString s=metaEnum.valueToKey(value);
+        return s;
+    }
+
+    static Types TypeByStr(QString const& value)
+    {
+        QMetaObject metaObject = MapType().staticMetaObject;
+        QMetaEnum metaEnum= metaObject.enumerator( metaObject.indexOfEnumerator("Types"));
+        Types s=(Types)metaEnum.keyToValue(value.toLatin1());
+        return s;
+    }
+
+    static QStringList TypesList()
+    {
+        QStringList ret;
+        QMetaObject metaObject = MapType().staticMetaObject;
+        QMetaEnum metaEnum= metaObject.enumerator( metaObject.indexOfEnumerator("Types"));
+        for(int x=0;x<metaEnum.keyCount();++x)
+        {
+            ret.append(metaEnum.key(x));
+        }
+        return ret;
+    }
+};
 
 }
 #endif // MAPTYPE_H

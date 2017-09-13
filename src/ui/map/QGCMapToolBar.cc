@@ -23,18 +23,19 @@ static const struct {
     const char*    name;
     MapType::Types type;
 } sMapTypes[] = {
-    { "Bing Hybrid", MapType::BingHybrid },
-    { "Bing Map", MapType::BingMap },
-    { "Bing Satellite", MapType::BingSatellite },
+    { "GaoDe Hybrid", MapType::GaoDeHybrid },
+    { "GaoDe Map", MapType::GaoDeMap },
+    { "GaoDe Satellite", MapType::GaoDeSatellite },
+
+    { "Google HybridChina", MapType::GoogleHybridChina },
+    { "Google MapChina", MapType::GoogleMapChina },
+    { "Google SatelliteChina", MapType::GoogleSatelliteChina },
+    { "Google TerrainChina", MapType::GoogleTerrainChina },
+
     { "Google Hybrid", MapType::GoogleHybrid },
     { "Google Map", MapType::GoogleMap },
     { "Google Satellite", MapType::GoogleSatellite },
     { "Google Terrain", MapType::GoogleTerrain },
-    { "OpenStreetMap", MapType::OpenStreetMap },
-    { "ArcGIS Map", MapType::ArcGIS_Map },
-    { "ArcGIS Terrain", MapType::ArcGIS_Terrain },
-    { "ArcGIS World Topo", MapType::ArcGIS_WorldTopo },
-    { "Statkart Topo2", MapType::Statkart_Topo2 }
 };
 
 static const size_t sNumMapTypes = sizeof(sMapTypes) / sizeof(sMapTypes[0]);

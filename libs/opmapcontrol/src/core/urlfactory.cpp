@@ -319,6 +319,24 @@ namespace core {
                 return QString("http://%1%2.gmaptiles.co.kr/%3/v=%4&hl=%5&x=%6%7&y=%8&z=%9&s=%10").arg(server).arg(GetServerNum(pos, 4)).arg(request).arg(VersionGoogleLabelsKorea).arg(language).arg(pos.X()).arg(sec1).arg(pos.Y()).arg(zoom).arg(sec2);
             }
             break;
+	    case MapType::GaoDeMap:
+	    {
+	        QString str = QString("http://webst04.is.autonavi.com/appmaptile?x=%1&y=%2&z=%3&lang=zh_cn&size=1&scale=1&style=7").arg(pos.X()).arg( pos.Y()).arg(zoom);
+	        //qDebug()<<str;
+	        return str ;
+	    }
+	    case MapType::GaoDeLabels:
+	    {
+	        QString str = QString("http://webst04.is.autonavi.com/appmaptile?x=%1&y=%2&z=%3&lang=zh_cn&size=1&scale=1&style=8").arg(pos.X()).arg( pos.Y()).arg(zoom);
+	        //qDebug()<<str;
+	        return str;
+	    }
+	    case MapType::GaoDeSatellite:
+	    {
+	        QString str = QString("http://webst04.is.autonavi.com/appmaptile?x=%1&y=%2&z=%3&lang=zh_cn&size=1&scale=1&style=6").arg(pos.X()).arg( pos.Y()).arg(zoom);
+	        //qDebug()<<str;
+	        return str;
+	    }
         case MapType::YahooMap:
             {
                 return QString("http://maps%1.yimg.com/hx/tl?v=%2&.intl=%3&x=%4&y=%5&z=%6&r=1").arg(((GetServerNum(pos, 2)) + 1)).arg(VersionYahooMap).arg(language).arg(pos.X()).arg((((1 << zoom) >> 1) - 1 - pos.Y())).arg((zoom + 1));
